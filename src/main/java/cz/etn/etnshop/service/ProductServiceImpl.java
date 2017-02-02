@@ -11,12 +11,32 @@ import cz.etn.etnshop.dao.ProductDao;
 @Service("productService")
 public class ProductServiceImpl implements ProductService {
 
-	@Autowired
-	private ProductDao productDao;
+    @Autowired
+    private ProductDao productDao;
 
-	@Override
-	public List<Product> getProducts() {
-		return productDao.getProducts();
-	}
+    @Override
+    public List<Product> getProducts() {
+        return productDao.getProducts();
+    }
+
+    @Override
+    public Product getEntityById(int id) {
+        return productDao.getEntityById(id);
+    }
+
+    @Override
+    public void addEntity(Product product) {
+        productDao.addEntity(product);
+    }
+
+    @Override
+    public void updateEntity(Product product) {
+        productDao.updateEntity(product);
+    }
+
+    @Override
+    public List<Product> getProducts(String searchText) {
+        return productDao.getProducts(searchText);
+    }
 
 }

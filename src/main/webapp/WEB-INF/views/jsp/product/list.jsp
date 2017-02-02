@@ -13,12 +13,19 @@
 </head>
 
 <div class="container">
+    <form action="/etnshop/product/search" method="get">
+            <label path="name">Search Product: </label>
+    		<input type="text" name="name">
+    		<input type="submit" class="btn btn-success" value="Submit"/>
+    	</form>
 	<h2>Products</h2>
 	<table class="table">
 		<thead>
 			<tr>
 				<th>ID</th>
 				<th>Name</th>
+				<th>Serial Number</th>
+				<th>Edit</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -26,7 +33,10 @@
 				<tr>
 					<td>${product.id}</td>
 					<td>${product.name}</td>
-				</tr>	
+					<td>${product.serialNumber}</td>
+					<td><a href="/etnshop/product/edit?id=${product.id}" role="button">Edit</a></td>
+				</tr>
+
 			</c:forEach>
 		</tbody>
 	</table>
@@ -34,8 +44,11 @@
 	<p>
 		<a class="btn btn-primary btn-lg" href="/etnshop" role="button">Back to homepage</a>
 	</p>
+	<p>
+    	<a class="btn btn-primary btn-lg" href="/etnshop/product/create" role="button">Add new product</a>
+    </p>
 	<footer>
-		<p>&copy; Etnetera a.s. 2015</p>
+		<p>&copy; Etnetera a.s. 2017</p>
 	</footer>
 </div>
 

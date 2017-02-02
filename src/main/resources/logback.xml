@@ -18,8 +18,17 @@
 	<logger name="cz.etn.etnshop" level="debug" additivity="false">
 		<appender-ref ref="STDOUT" />
 	</logger>
-	
+
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file> log.txt </file>
+		<append>true</append>
+		<encoder>
+			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
 	<root level="debug">
+		<appender-ref ref="FILE" />
 		<appender-ref ref="STDOUT" />
 	</root>
 
